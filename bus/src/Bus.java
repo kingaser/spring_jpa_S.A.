@@ -7,6 +7,7 @@ public class Bus extends PublicTransport{
 
     public Bus(int number, int totalPassenger, int speed) { // 버스생성자에 버스 번호와 최대 승객수
         super(number, totalPassenger, speed);
+        System.out.println(number + "번 버스객체 만들어짐!");
     }
 
 
@@ -31,27 +32,12 @@ public class Bus extends PublicTransport{
         else System.out.println("상태 : 차고지행");
     }
 
-    public int getPassengerCount() {
-        return passengerCount;
-    }
-
-    public void setPassengerCount(int passengerCount) {
-        this.passengerCount = passengerCount;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public int getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
-    }
 }

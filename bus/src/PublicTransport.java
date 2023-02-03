@@ -10,7 +10,7 @@ public abstract class PublicTransport {
         this.number = number;
         this.speed = speed;
         this.totalPassenger = totalPassenger;
-        System.out.println(number + "번 버스객체 만들어짐!");
+
     }
 
     public abstract int take(int price); // 승객 탑승
@@ -47,9 +47,5 @@ public abstract class PublicTransport {
 
     public int getTotalPassenger() {
         return totalPassenger;
-    }
-
-    public void setTotalPassenger(int totalPassenger) {
-        this.totalPassenger = totalPassenger;
     }
 }
