@@ -1,13 +1,14 @@
 package spring.transpost;
 
 import spring.bus.Bus;
+import spring.taxi.Taxi;
 
 import java.util.Objects;
 
 public abstract class abstractTransport implements Transport {
 
     protected int number;
-    private int fuel = 100;
+    protected int fuel = 100;
     private int speed = 0;
     private int changeSpeed;
     protected int totalPassenger;
@@ -37,7 +38,10 @@ public abstract class abstractTransport implements Transport {
     }
 
     @Override
-    public abstract void status();
+    public void status() {
+        if (isPossible) System.out.println("운행");
+        else System.out.println("차고지행");
+    }
 
     @Override
     public abstract void take(int passenger);
@@ -51,6 +55,16 @@ public abstract class abstractTransport implements Transport {
     public void changeSpeed(int speed) {
         this.speed += speed;
         System.out.println("현재 속도 : " + this.speed);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return this.number == ((abstractTransport)o).number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
     }
 
 }

@@ -2,7 +2,6 @@ package spring.bus;
 
 import spring.transpost.abstractTransport;
 
-import java.util.Objects;
 
 public class Bus extends abstractTransport {
 
@@ -10,7 +9,7 @@ public class Bus extends abstractTransport {
 
     public Bus(int number, int fuel, int speed, int totalPassenger) {
         super(number, fuel, speed, totalPassenger);
-        System.out.println(number + "번 버스가 운행을 시작합니다.");
+        System.out.println(number + "번 버스가 운행준비를 완료했습니다.");
     }
 
     @Override
@@ -24,21 +23,5 @@ public class Bus extends abstractTransport {
             System.out.println("요금 확인 : " + price * passenger);
         }
 
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return this.number == ((Bus)o).number;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(number);
-    }
-
-    @Override
-    public void status() {
-        if (super.isPossible) System.out.println("운행");
-        else System.out.println("차고지행");
     }
 }
